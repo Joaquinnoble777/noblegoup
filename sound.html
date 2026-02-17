@@ -3,49 +3,61 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Noble Sound | Producción de Eventos Premium</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+<title>Noble Sound | Producción de Eventos</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 <style>
+
+:root{
+--primary:#C6A75E;
+--dark:#111111;
+--light:#f8f8f8;
+--gray:#666;
+}
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-scroll-behavior:smooth;
+font-family:'Montserrat',sans-serif;
 }
 
 body{
-background:#0f0f0f;
-color:white;
+background:var(--light);
+color:var(--dark);
+line-height:1.6;
 }
 
 header{
 position:fixed;
 width:100%;
-background:rgba(0,0,0,0.8);
-padding:20px 10%;
+background:white;
+padding:20px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
 z-index:1000;
-backdrop-filter:blur(10px);
 }
 
-header h1{
-color:#ffae00;
+.logo{
+font-weight:700;
+font-size:20px;
+color:var(--primary);
 }
 
 nav a{
-color:white;
+margin-left:25px;
 text-decoration:none;
-margin-left:20px;
+color:var(--dark);
 font-weight:500;
 transition:.3s;
 }
 
 nav a:hover{
-color:#ffae00;
+color:var(--primary);
 }
 
 .hero{
@@ -55,43 +67,40 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
+padding:0 10%;
+background:linear-gradient(rgba(255,255,255,0.85),rgba(255,255,255,0.85)),
 url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30');
 background-size:cover;
 background-position:center;
-padding:0 10%;
 }
 
-.hero h2{
+.hero h1{
 font-size:3rem;
-font-weight:800;
-color:#ffae00;
+font-weight:700;
+margin-bottom:20px;
 }
 
-.hero p{
-margin-top:20px;
-font-size:1.2rem;
-max-width:700px;
+.hero span{
+color:var(--primary);
 }
 
 .btn{
-margin-top:30px;
 display:inline-block;
-padding:15px 40px;
-background:#ffae00;
-color:black;
-font-weight:600;
-text-decoration:none;
+padding:14px 35px;
+background:var(--primary);
+color:white;
 border-radius:30px;
+text-decoration:none;
+margin-top:20px;
 transition:.3s;
 }
 
 .btn:hover{
-background:white;
+opacity:.8;
 }
 
 section{
-padding:100px 10%;
+padding:100px 8%;
 }
 
 .section-title{
@@ -100,95 +109,114 @@ margin-bottom:60px;
 }
 
 .section-title h2{
-font-size:2.5rem;
-color:#ffae00;
+font-size:2.2rem;
+margin-bottom:10px;
 }
 
-.services{
+.section-title p{
+color:var(--gray);
+}
+
+.grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
+gap:40px;
 }
 
 .card{
-background:#1a1a1a;
-padding:30px;
+background:white;
+padding:35px;
 border-radius:15px;
+box-shadow:0 5px 25px rgba(0,0,0,0.05);
+text-align:center;
 transition:.3s;
 }
 
 .card:hover{
-transform:translateY(-10px);
-background:#222;
+transform:translateY(-8px);
 }
 
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
-.gallery img{
-width:100%;
-border-radius:10px;
-transition:.3s;
-}
-
-.gallery img:hover{
-transform:scale(1.05);
-}
-
-.tech{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-}
-
-.tech-box{
-background:#1a1a1a;
-padding:30px;
-border-radius:15px;
-}
-
-.success{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:30px;
-}
-
-.success-box{
-background:#1a1a1a;
-padding:30px;
-border-radius:15px;
-}
-
-.faq{
-max-width:800px;
-margin:auto;
-}
-
-.faq-item{
+.card i{
+font-size:35px;
+color:var(--primary);
 margin-bottom:20px;
 }
 
-.faq-item h4{
-color:#ffae00;
-margin-bottom:10px;
+.success-box, .testimonial{
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
 }
 
-.contact{
+.testimonial{
 text-align:center;
+}
+
+.testimonial p{
+font-style:italic;
+margin-bottom:15px;
+}
+
+form{
+max-width:600px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+input, textarea{
+padding:15px;
+border:1px solid #ddd;
+border-radius:8px;
+font-size:15px;
+}
+
+textarea{
+resize:none;
+height:120px;
+}
+
+button{
+padding:15px;
+background:var(--primary);
+color:white;
+border:none;
+border-radius:30px;
+font-size:16px;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+opacity:.85;
 }
 
 footer{
-background:#000;
+background:#111;
+color:white;
+padding:50px 8%;
 text-align:center;
-padding:30px;
-margin-top:50px;
+}
+
+.social-icons{
+margin-top:20px;
+}
+
+.social-icons a{
+color:white;
+margin:0 10px;
+font-size:20px;
+transition:.3s;
+}
+
+.social-icons a:hover{
+color:var(--primary);
 }
 
 @media(max-width:768px){
-.hero h2{
+.hero h1{
 font-size:2rem;
 }
 }
@@ -198,81 +226,46 @@ font-size:2rem;
 <body>
 
 <header>
-<h1>Noble Sound</h1>
+<div class="logo">Noble Sound</div>
 <nav>
 <a href="#servicios">Servicios</a>
-<a href="#galeria">Galería</a>
-<a href="#tecnologia">Tecnología</a>
-<a href="#casos">Casos de Éxito</a>
-<a href="#faq">FAQ</a>
-<a href="#contacto">Contacto</a>
+<a href="#casos">Casos</a>
+<a href="#testimonios">Testimonios</a>
+<a href="#reserva">Reserva</a>
 </nav>
 </header>
 
 <section class="hero">
-<h2>Ambiente & Música de Alto Nivel</h2>
-<p>Producción profesional para eventos corporativos, bodas y fiestas privadas. Creamos experiencias inolvidables.</p>
-<a href="#contacto" class="btn">Reservar Fecha</a>
+<h1>Experiencias <span>Sonoras Premium</span></h1>
+<p>Producción profesional de eventos corporativos, bodas y fiestas privadas con tecnología de alto nivel.</p>
+<a href="#reserva" class="btn">Reservar Fecha</a>
 </section>
 
 <section id="servicios">
 <div class="section-title">
 <h2>Servicios</h2>
+<p>Soluciones integrales para eventos memorables</p>
 </div>
-<div class="services">
+<div class="grid">
 <div class="card">
+<i class="fas fa-briefcase"></i>
 <h3>Eventos Corporativos</h3>
-<p>Sonido e iluminación profesional para lanzamientos, conferencias y celebraciones empresariales.</p>
+<p>Sonido e iluminación profesional para marcas y empresas.</p>
 </div>
 <div class="card">
-<h3>Bodas & Fiestas</h3>
-<p>Ambientación personalizada y musicalización adaptada a cada momento especial.</p>
+<i class="fas fa-ring"></i>
+<h3>Bodas</h3>
+<p>Ambientación elegante y musicalización personalizada.</p>
 </div>
 <div class="card">
-<h3>Producción Musical</h3>
-<p>DJ profesional con experiencia creando sets dinámicos y energéticos.</p>
+<i class="fas fa-music"></i>
+<h3>DJ Profesional</h3>
+<p>Sets dinámicos adaptados al público y tipo de evento.</p>
 </div>
 <div class="card">
-<h3>Sonido & Iluminación</h3>
-<p>Equipamiento premium de alta fidelidad y efectos visuales impactantes.</p>
-</div>
-</div>
-</section>
-
-<section id="galeria">
-<div class="section-title">
-<h2>Galería</h2>
-</div>
-<div class="gallery">
-<img src="https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2">
-<img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819">
-<img src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc">
-<img src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec">
-<img src="https://images.unsplash.com/photo-1506157786151-b8491531f063">
-<img src="https://images.unsplash.com/photo-1496337589254-7e19d01cec44">
-</div>
-</section>
-
-<section id="tecnologia">
-<div class="section-title">
-<h2>Tecnología</h2>
-</div>
-<div class="tech">
-<div class="tech-box">
-<h3>Audio Profesional</h3>
-<p>Sistemas line array y monitores de alta potencia para sonido limpio y envolvente.</p>
-</div>
-<div class="tech-box">
-<h3>Iluminación Inteligente</h3>
-<p>Luces robotizadas, wash, beam y efectos dinámicos sincronizados con la música.</p>
-</div>
-<div class="tech-box">
-<h3>Máquinas de Humo</h3>
-<p>Efectos atmosféricos que potencian la experiencia visual del evento.</p>
-</div>
-<div class="tech-box">
-<h3>Producción Integral</h3>
-<p>Planificación técnica completa para eventos de cualquier escala.</p>
+<i class="fas fa-lightbulb"></i>
+<h3>Iluminación & FX</h3>
+<p>Luces inteligentes, máquinas de humo y efectos visuales.</p>
 </div>
 </div>
 </section>
@@ -281,53 +274,60 @@ font-size:2rem;
 <div class="section-title">
 <h2>Casos de Éxito</h2>
 </div>
-<div class="success">
+<div class="grid">
 <div class="success-box">
-<h3>Lanzamiento Corporativo</h3>
-<p>Producción completa para empresa multinacional con más de 500 asistentes.</p>
+<h3>Lanzamiento Empresarial</h3>
+<p>Evento para 600 asistentes con producción integral y escenario completo.</p>
 </div>
 <div class="success-box">
 <h3>Boda Premium</h3>
-<p>Ambientación elegante con iluminación cálida y pista llena toda la noche.</p>
+<p>Experiencia elegante con iluminación cálida y pista activa toda la noche.</p>
 </div>
 <div class="success-box">
-<h3>Fiesta Privada Exclusiva</h3>
-<p>Set personalizado y show de luces dinámico para experiencia VIP.</p>
+<h3>Fiesta VIP</h3>
+<p>Show de luces dinámico y experiencia audiovisual inmersiva.</p>
 </div>
 </div>
 </section>
 
-<section id="faq">
+<section id="testimonios">
 <div class="section-title">
-<h2>Preguntas Frecuentes</h2>
+<h2>Testimonios</h2>
 </div>
-<div class="faq">
-<div class="faq-item">
-<h4>¿Con cuánta anticipación debo reservar?</h4>
-<p>Recomendamos al menos 1 mes de anticipación para asegurar disponibilidad.</p>
+<div class="grid">
+<div class="testimonial">
+<p>"Superaron nuestras expectativas. Sonido impecable y ambiente increíble."</p>
+<strong>- Empresa XYZ</strong>
 </div>
-<div class="faq-item">
-<h4>¿Incluyen montaje y desmontaje?</h4>
-<p>Sí, nuestro equipo técnico se encarga de todo el proceso.</p>
-</div>
-<div class="faq-item">
-<h4>¿Trabajan fuera de la ciudad?</h4>
-<p>Sí, ofrecemos cobertura regional bajo coordinación previa.</p>
+<div class="testimonial">
+<p>"La mejor decisión para nuestra boda. Profesionalismo total."</p>
+<strong>- María & Andrés</strong>
 </div>
 </div>
 </section>
 
-<section id="contacto" class="contact">
+<section id="reserva">
 <div class="section-title">
-<h2>Contacto</h2>
+<h2>Reserva tu Fecha</h2>
+<p>Contáctanos y recibe una propuesta personalizada</p>
 </div>
-<p>Reserva tu fecha hoy mismo y llevemos tu evento al siguiente nivel.</p>
-<br>
-<a href="https://wa.me/092214516" class="btn">WhatsApp 092 214 516</a>
+
+<form>
+<input type="text" placeholder="Nombre completo" required>
+<input type="email" placeholder="Correo electrónico" required>
+<input type="date" required>
+<textarea placeholder="Cuéntanos sobre tu evento"></textarea>
+<button type="submit">Enviar Solicitud</button>
+</form>
 </section>
 
 <footer>
-<p>© 2026 Noble Sound | Producción de Eventos Premium</p>
+<p>© 2026 Noble Sound | Producción de Eventos</p>
+<div class="social-icons">
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-facebook"></i></a>
+<a href="#"><i class="fab fa-whatsapp"></i></a>
+</div>
 </footer>
 
 </body>
