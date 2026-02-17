@@ -1,170 +1,187 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Noble Detailing | Servicio Premium</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
-    <style>
-        body { background-color: #0f0f0f; color: #fff; }
-        .hero { background: linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.8)), url('https://images.unsplash.com/photo-1511919884226-fd3cad34687c'); background-size: cover; background-position: center; padding: 120px 0; }
-        .gold { color: #d4af37; }
-        .btn-gold { background-color: #d4af37; color: #000; font-weight: bold; }
-        .btn-gold:hover { background-color: #b8962e; }
-        .section { padding: 80px 0; }
-        .card { background-color: #1c1c1c; border: none; }
-        .faq-item { background-color: #1a1a1a; }
-        footer { background-color: #000; padding: 40px 0; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Noble Detailing | Premium Car Care</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+body {font-family: 'Poppins', sans-serif; background:#f8f9fa;}
+.navbar {background:#111;}
+.navbar-brand {font-weight:700; letter-spacing:1px;}
+.hero {background:linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)), url('https://images.unsplash.com/photo-1511919884226-fd3cad34687c'); background-size:cover; background-position:center; padding:140px 0; color:#fff;}
+.btn-gold {background:#d4af37; color:#000; font-weight:600; border:none;}
+.btn-gold:hover {background:#b8962e;}
+.section {padding:90px 0;}
+.section-title {font-weight:700; margin-bottom:50px;}
+.card {border:none; border-radius:15px; box-shadow:0 5px 20px rgba(0,0,0,0.08);}
+.icon-circle {width:70px; height:70px; display:flex; align-items:center; justify-content:center; border-radius:50%; background:#111; color:#d4af37; font-size:28px; margin:auto;}
+.testimonial {background:#111; color:#fff; border-radius:15px; padding:30px;}
+footer {background:#111; color:#ccc; padding:50px 0;}
+.social a {color:#d4af37; font-size:22px; margin:0 10px;}
+</style>
 </head>
 <body>
 
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
-  <div class="container">
-    <a class="navbar-brand gold fw-bold" href="#">Noble Detailing</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
-        <li class="nav-item"><a class="nav-link" href="#casos">Casos de Éxito</a></li>
-        <li class="nav-item"><a class="nav-link" href="#faq">Preguntas</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
-      </ul>
-    </div>
-  </div>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+<div class="container">
+<a class="navbar-brand text-warning" href="#">Noble Detailing</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="nav">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+<li class="nav-item"><a class="nav-link" href="#casos">Casos de Éxito</a></li>
+<li class="nav-item"><a class="nav-link" href="#testimonios">Testimonios</a></li>
+<li class="nav-item"><a class="nav-link" href="#reserva">Reservar</a></li>
+</ul>
+</div>
+</div>
 </nav>
 
 <!-- HERO -->
-<section class="hero text-center text-white">
-  <div class="container">
-    <h1 class="display-4 fw-bold gold">Perfección en cada detalle</h1>
-    <p class="lead">Servicio Premium de Detailing Automotriz</p>
-    <a href="https://wa.me/59892214516" class="btn btn-gold btn-lg mt-3">
-      <i class="bi bi-whatsapp"></i> Agendar por WhatsApp
-    </a>
-  </div>
+<section class="hero text-center">
+<div class="container">
+<h1 class="display-4 fw-bold">Perfección en cada detalle</h1>
+<p class="lead mb-4">Servicio Premium de Detailing Automotriz</p>
+<a href="#reserva" class="btn btn-gold btn-lg">Reservar Ahora</a>
+</div>
 </section>
 
 <!-- SERVICIOS -->
-<section id="servicios" class="section">
-  <div class="container text-center">
-    <h2 class="gold mb-5">Nuestros Servicios</h2>
-    <div class="row g-4">
-      <div class="col-md-3">
-        <div class="card p-4 h-100">
-          <i class="bi bi-droplet-fill gold fs-1"></i>
-          <h5 class="mt-3">Lavado Premium</h5>
-          <p>Limpieza profunda con productos de alta calidad.</p>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="card p-4 h-100">
-          <i class="bi bi-brush-fill gold fs-1"></i>
-          <h5 class="mt-3">Pulido & Abrillantado</h5>
-          <p>Eliminación de rayas y brillo espejo profesional.</p>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="card p-4 h-100">
-          <i class="bi bi-shield-fill-check gold fs-1"></i>
-          <h5 class="mt-3">Tratamiento Cerámico</h5>
-          <p>Protección avanzada y duradera para tu pintura.</p>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="card p-4 h-100">
-          <i class="bi bi-car-front-fill gold fs-1"></i>
-          <h5 class="mt-3">Restauración Interior</h5>
-          <p>Renovación completa de tapizados y superficies.</p>
-        </div>
-      </div>
-    </div>
-  </div>
+<section id="servicios" class="section text-center">
+<div class="container">
+<h2 class="section-title">Nuestros Servicios</h2>
+<div class="row g-4">
+<div class="col-md-3">
+<div class="card p-4">
+<div class="icon-circle"><i class="bi bi-droplet-fill"></i></div>
+<h5 class="mt-3">Lavado Premium</h5>
+<p>Limpieza profunda exterior e interior con acabado profesional.</p>
+</div>
+</div>
+<div class="col-md-3">
+<div class="card p-4">
+<div class="icon-circle"><i class="bi bi-brush-fill"></i></div>
+<h5 class="mt-3">Pulido</h5>
+<p>Corrección de pintura y brillo espejo.</p>
+</div>
+</div>
+<div class="col-md-3">
+<div class="card p-4">
+<div class="icon-circle"><i class="bi bi-shield-check"></i></div>
+<h5 class="mt-3">Cerámico</h5>
+<p>Protección duradera contra clima y suciedad.</p>
+</div>
+</div>
+<div class="col-md-3">
+<div class="card p-4">
+<div class="icon-circle"><i class="bi bi-car-front-fill"></i></div>
+<h5 class="mt-3">Interior</h5>
+<p>Restauración completa de tapizados y superficies.</p>
+</div>
+</div>
+</div>
+</div>
 </section>
 
 <!-- CASOS DE EXITO -->
-<section id="casos" class="section bg-dark">
-  <div class="container text-center">
-    <h2 class="gold mb-5">Casos de Éxito</h2>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card p-3">
-          <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70" class="img-fluid rounded mb-3" alt="Caso 1">
-          <h6>Restauración Completa</h6>
-          <p>Vehículo con pintura opaca recuperó brillo total.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card p-3">
-          <img src="https://images.unsplash.com/photo-1493238792000-8113da705763" class="img-fluid rounded mb-3" alt="Caso 2">
-          <h6>Tratamiento Cerámico</h6>
-          <p>Protección premium aplicada con acabado espejo.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card p-3">
-          <img src="https://images.unsplash.com/photo-1517520287167-4bbf64a00d66" class="img-fluid rounded mb-3" alt="Caso 3">
-          <h6>Interior Renovado</h6>
-          <p>Tapizados restaurados a estado original.</p>
-        </div>
-      </div>
-    </div>
-  </div>
+<section id="casos" class="section bg-light text-center">
+<div class="container">
+<h2 class="section-title">Casos de Éxito</h2>
+<div class="row g-4">
+<div class="col-md-4">
+<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70" class="img-fluid rounded shadow" alt="caso">
+<p class="mt-3">Restauración total de pintura con acabado espejo.</p>
+</div>
+<div class="col-md-4">
+<img src="https://images.unsplash.com/photo-1493238792000-8113da705763" class="img-fluid rounded shadow" alt="caso">
+<p class="mt-3">Aplicación de tratamiento cerámico premium.</p>
+</div>
+<div class="col-md-4">
+<img src="https://images.unsplash.com/photo-1517520287167-4bbf64a00d66" class="img-fluid rounded shadow" alt="caso">
+<p class="mt-3">Interior renovado a estado original.</p>
+</div>
+</div>
+</div>
 </section>
 
-<!-- FAQ -->
-<section id="faq" class="section">
-  <div class="container">
-    <h2 class="gold text-center mb-5">Preguntas Frecuentes</h2>
-    <div class="accordion" id="faqAccordion">
-      <div class="accordion-item faq-item text-white">
-        <h2 class="accordion-header">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-            ¿Cuánto dura un tratamiento cerámico?
-          </button>
-        </h2>
-        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            Puede durar entre 1 y 3 años dependiendo del mantenimiento.
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item faq-item text-white">
-        <h2 class="accordion-header">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
-            ¿Cuánto tiempo demora el servicio?
-          </button>
-        </h2>
-        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            Entre 4 y 8 horas según el servicio contratado.
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<!-- TESTIMONIOS -->
+<section id="testimonios" class="section text-center">
+<div class="container">
+<h2 class="section-title">Testimonios</h2>
+<div class="row g-4">
+<div class="col-md-4">
+<div class="testimonial">
+<p>"El mejor servicio que he contratado. Mi auto quedó como nuevo."</p>
+<strong>- Carlos M.</strong>
+</div>
+</div>
+<div class="col-md-4">
+<div class="testimonial">
+<p>"Profesionalismo y atención impecable."</p>
+<strong>- Mariana R.</strong>
+</div>
+</div>
+<div class="col-md-4">
+<div class="testimonial">
+<p>"Recomiendo el tratamiento cerámico, resultado increíble."</p>
+<strong>- Andrés L.</strong>
+</div>
+</div>
+</div>
+</div>
 </section>
 
-<!-- CONTACTO -->
-<section id="contacto" class="section bg-dark text-center">
-  <div class="container">
-    <h2 class="gold mb-4">Reserva tu Turno</h2>
-    <p>Contáctanos directamente por WhatsApp</p>
-    <a href="https://wa.me/59892214516" class="btn btn-gold btn-lg">
-      <i class="bi bi-whatsapp"></i> 092 214 516
-    </a>
-  </div>
+<!-- RESERVA -->
+<section id="reserva" class="section bg-light">
+<div class="container">
+<h2 class="section-title text-center">Reserva tu Turno</h2>
+<div class="row justify-content-center">
+<div class="col-md-6">
+<form onsubmit="enviarWhatsApp(event)">
+<div class="mb-3">
+<input type="text" id="nombre" class="form-control" placeholder="Nombre" required>
+</div>
+<div class="mb-3">
+<input type="text" id="servicio" class="form-control" placeholder="Servicio requerido" required>
+</div>
+<div class="mb-3">
+<input type="date" id="fecha" class="form-control" required>
+</div>
+<button class="btn btn-gold w-100" type="submit"><i class="bi bi-whatsapp"></i> Enviar Reserva</button>
+</form>
+</div>
+</div>
+</div>
 </section>
 
-<footer class="text-center text-white">
-  <div class="container">
-    <p class="mb-0">© 2026 Noble Detailing - Todos los derechos reservados</p>
-  </div>
+<!-- FOOTER -->
+<footer class="text-center">
+<div class="container">
+<div class="social mb-3">
+<a href="#"><i class="bi bi-instagram"></i></a>
+<a href="#"><i class="bi bi-facebook"></i></a>
+<a href="#"><i class="bi bi-whatsapp"></i></a>
+</div>
+<p>© 2026 Noble Detailing - Todos los derechos reservados</p>
+</div>
 </footer>
+
+<script>
+function enviarWhatsApp(e){
+e.preventDefault();
+let nombre=document.getElementById('nombre').value;
+let servicio=document.getElementById('servicio').value;
+let fecha=document.getElementById('fecha').value;
+let mensaje=`Hola, soy ${nombre}. Quiero reservar ${servicio} para el día ${fecha}.`;
+window.open(`https://wa.me/59892214516?text=${encodeURIComponent(mensaje)}`,'_blank');
+}
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
