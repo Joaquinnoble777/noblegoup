@@ -1,297 +1,256 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import {
-  Leaf,
-  Scissors,
-  Droplets,
-  Flower2,
-  CheckCircle,
-  Phone,
-  Menu,
-  Settings
-} from "lucide-react";
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noble Garden | Jardinería Profesional</title>
+  <meta name="description" content="Diseño, mantenimiento y cuidado profesional de espacios verdes. Noble Garden transforma tu jardín en naturaleza viva.">
+  
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
-export default function NobleGardenWebsite() {
-  const whatsappNumber = "59892214516";
+  <!-- Custom Styles -->
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+    }
 
-  const openWhatsApp = (message) => {
-    const text = encodeURIComponent(message);
-    window.open(`https://wa.me/${whatsappNumber}?text=${text}`, "_blank");
-  };
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+      url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6') center/cover no-repeat;
+      color: white;
+      padding: 120px 0;
+    }
 
-  return (
-    <div className="min-h-screen bg-white text-gray-800 scroll-smooth">
-      {/* NAVBAR */}
-      <header className="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="text-2xl font-bold text-green-800 tracking-wide">
-            Noble Garden
-          </div>
-          <nav className="hidden md:flex gap-8 text-sm font-medium">
-            <a href="#servicios" className="hover:text-green-700">Servicios</a>
-            <a href="#proceso" className="hover:text-green-700">Proceso</a>
-            <a href="#maquinas" className="hover:text-green-700">Maquinaria</a>
-            <a href="#casos" className="hover:text-green-700">Casos de Éxito</a>
-            <a href="#faq" className="hover:text-green-700">Preguntas</a>
-            <a href="#contacto" className="hover:text-green-700">Contacto</a>
-          </nav>
-          <Menu className="md:hidden text-green-800" />
-        </div>
-      </header>
+    .section-padding {
+      padding: 80px 0;
+    }
 
-      {/* HERO */}
-      <section className="pt-32 pb-24 px-6 bg-gradient-to-br from-green-900 to-green-700 text-white">
-        <div className="max-w-6xl mx-auto text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-4xl md:text-6xl font-bold mb-6 leading-tight"
-          >
-            Transformamos espacios en naturaleza viva.
-          </motion.h1>
-          <p className="text-lg md:text-xl mb-10 text-green-100">
-            Jardinería profesional y mantenimiento integral.
-          </p>
-          <Button
-            onClick={() =>
-              openWhatsApp("Hola Noble Garden, quiero solicitar un presupuesto.")
-            }
-            className="bg-white text-green-800 hover:bg-green-100 rounded-2xl px-10 py-6 text-lg shadow-xl"
-          >
-            Solicitar presupuesto
-          </Button>
-        </div>
-      </section>
+    .bg-dark-green {
+      background-color: #0f3d2e;
+      color: white;
+    }
 
-      {/* SERVICIOS */}
-      <section id="servicios" className="py-24 px-6 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
-            Nuestros Servicios
-          </h2>
-          <div className="grid md:grid-cols-4 gap-10">
-            {[
-              {
-                icon: <Flower2 size={40} />,
-                title: "Diseño de jardines",
-                desc: "Creamos espacios verdes armónicos y personalizados.",
-              },
-              {
-                icon: <Leaf size={40} />,
-                title: "Mantenimiento periódico",
-                desc: "Cuidado constante para conservar la belleza natural.",
-              },
-              {
-                icon: <Scissors size={40} />,
-                title: "Podas y restauración",
-                desc: "Recuperación y poda técnica profesional.",
-              },
-              {
-                icon: <Droplets size={40} />,
-                title: "Sistemas de riego",
-                desc: "Instalación eficiente y automatizada.",
-              },
-            ].map((service, i) => (
-              <Card
-                key={i}
-                className="rounded-2xl shadow-md hover:shadow-xl transition duration-300"
-              >
-                <CardContent className="p-8 text-center space-y-4">
-                  <div className="text-green-700 flex justify-center">
-                    {service.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold">
-                    {service.title}
-                  </h3>
-                  <p className="text-sm text-gray-600">
-                    {service.desc}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+    .btn-custom {
+      background-color: #1e7e34;
+      color: white;
+      border-radius: 50px;
+      padding: 12px 30px;
+    }
 
-      {/* PROCESO */}
-      <section id="proceso" className="py-24 px-6 bg-green-50">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-16">
-            Nuestro Proceso
-          </h2>
-          <div className="grid md:grid-cols-3 gap-10">
-            {[
-              "Evaluación y diagnóstico del espacio",
-              "Diseño y planificación personalizada",
-              "Ejecución y mantenimiento continuo",
-            ].map((step, i) => (
-              <div key={i} className="space-y-4">
-                <CheckCircle size={40} className="mx-auto text-green-700" />
-                <p className="text-lg">{step}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+    .btn-custom:hover {
+      background-color: #155d27;
+      color: white;
+    }
 
-      {/* MAQUINARIA */}
-      <section id="maquinas" className="py-24 px-6 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
-            Maquinaria Profesional
-          </h2>
-          <div className="grid md:grid-cols-3 gap-10">
-            {[
-              {
-                title: "Cortadoras de Césped Profesionales",
-                desc: "Utilizamos cortadoras de alto rendimiento que garantizan un corte uniforme, preciso y saludable para el césped.",
-              },
-              {
-                title: "Desmalezadoras y Bordeadora",
-                desc: "Equipos ideales para zonas difíciles, bordes y áreas de acceso reducido, asegurando terminaciones prolijas.",
-              },
-              {
-                title: "Tractores y Equipos de Gran Superficie",
-                desc: "Para espacios amplios utilizamos maquinaria especializada que optimiza tiempos y resultados.",
-              },
-            ].map((machine, i) => (
-              <Card key={i} className="rounded-2xl shadow-md hover:shadow-xl transition">
-                <CardContent className="p-8 space-y-4">
-                  <div className="text-green-700">
-                    <Settings size={36} />
-                  </div>
-                  <h3 className="text-xl font-semibold text-green-800">
-                    {machine.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm">
-                    {machine.desc}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+    .icon-box i {
+      font-size: 40px;
+      color: #1e7e34;
+      margin-bottom: 15px;
+    }
 
-      {/* CASOS DE ÉXITO */}
-      <section id="casos" className="py-24 px-6 bg-green-50">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
-            Casos de Éxito
-          </h2>
-          <div className="grid md:grid-cols-3 gap-10">
-            {[
-              {
-                title: "Residencia Familiar",
-                result: "Transformación completa de jardín en 30 días.",
-              },
-              {
-                title: "Complejo Empresarial",
-                result: "Rediseño integral y mantenimiento mensual continuo.",
-              },
-              {
-                title: "Restauración de Espacio Antiguo",
-                result: "Recuperación de áreas verdes deterioradas.",
-              },
-            ].map((caseItem, i) => (
-              <Card key={i} className="rounded-2xl shadow-md">
-                <CardContent className="p-8 space-y-4">
-                  <h3 className="text-xl font-semibold text-green-800">
-                    {caseItem.title}
-                  </h3>
-                  <p className="text-gray-600">{caseItem.result}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+    .gallery img {
+      height: 250px;
+      object-fit: cover;
+      border-radius: 15px;
+    }
 
-      {/* FAQ */}
-      <section id="faq" className="py-24 px-6 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
-            Preguntas Frecuentes
-          </h2>
-          <div className="space-y-8">
-            {[
-              {
-                q: "¿Realizan presupuestos sin costo?",
-                a: "Sí, realizamos una evaluación inicial gratuita para brindarte una propuesta personalizada.",
-              },
-              {
-                q: "¿Trabajan mantenimiento mensual?",
-                a: "Ofrecemos planes de mantenimiento periódicos adaptados a cada espacio.",
-              },
-              {
-                q: "¿Instalan sistemas de riego automático?",
-                a: "Sí, instalamos sistemas de riego eficientes y automatizados.",
-              },
-            ].map((faq, i) => (
-              <div key={i} className="bg-green-50 p-6 rounded-2xl shadow-sm">
-                <h3 className="font-semibold text-green-800 mb-2">{faq.q}</h3>
-                <p className="text-gray-600 text-sm">{faq.a}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+    footer {
+      background-color: #0b2d22;
+      color: white;
+      padding: 30px 0;
+    }
+  </style>
+</head>
 
-      {/* CONTACTO */}
-      <section id="contacto" className="py-24 px-6 bg-green-900 text-white">
-        <div className="max-w-3xl mx-auto text-center space-y-10">
-          <h2 className="text-3xl md:text-4xl font-bold">
-            Tu espacio verde, en manos expertas.
-          </h2>
+<body>
 
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              const form = e.target;
-              const name = form.name.value;
-              const service = form.service.value;
-              const message = `Hola Noble Garden, quiero reservar un servicio.\n\nNombre: ${name}\nServicio: ${service}`;
-              openWhatsApp(message);
-            }}
-            className="space-y-6 bg-white text-gray-800 p-10 rounded-2xl shadow-xl"
-          >
-            <input
-              type="text"
-              name="name"
-              placeholder="Nombre completo"
-              required
-              className="w-full p-4 rounded-xl border focus:outline-none focus:ring-2 focus:ring-green-700"
-            />
-
-            <select
-              name="service"
-              required
-              className="w-full p-4 rounded-xl border focus:outline-none focus:ring-2 focus:ring-green-700"
-            >
-              <option value="">Seleccionar servicio</option>
-              <option>Diseño de jardines</option>
-              <option>Mantenimiento periódico</option>
-              <option>Podas y restauración</option>
-              <option>Sistemas de riego</option>
-            </select>
-
-            <Button className="w-full bg-green-800 hover:bg-green-700 text-white rounded-2xl py-6 text-lg">
-              Reservar por WhatsApp (092-214-516)
-            </Button>
-          </form>
-
-          <div className="flex items-center justify-center gap-2 text-green-200 text-sm">
-            <Phone size={16} /> 092-214-516
-          </div>
-        </div>
-      </section>
-
-      <footer className="bg-green-950 text-green-200 py-6 text-center text-sm">
-        © {new Date().getFullYear()} Noble Garden — Jardinería Profesional
-      </footer>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-success" href="#">Noble Garden</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+        <li class="nav-item"><a class="nav-link" href="#proceso">Proceso</a></li>
+        <li class="nav-item"><a class="nav-link" href="#maquinaria">Maquinaria</a></li>
+        <li class="nav-item"><a class="nav-link" href="#casos">Casos de Éxito</a></li>
+        <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+        <li class="nav-item"><a class="btn btn-custom ms-3" href="#contacto">Reservar</a></li>
+      </ul>
     </div>
-  );
-}
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero text-center">
+  <div class="container">
+    <h1 class="display-4 fw-bold">Transformamos espacios en naturaleza viva.</h1>
+    <p class="lead mb-4">Jardinería profesional y mantenimiento integral.</p>
+    <a href="#contacto" class="btn btn-custom btn-lg">Solicitar presupuesto</a>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios" class="section-padding text-center">
+  <div class="container">
+    <h2 class="mb-5 fw-bold">Nuestros Servicios</h2>
+    <div class="row g-4">
+      <div class="col-md-3 icon-box">
+        <i class="bi bi-flower1"></i>
+        <h5>Diseño de jardines</h5>
+        <p>Diseño personalizado y armónico para cada espacio.</p>
+      </div>
+      <div class="col-md-3 icon-box">
+        <i class="bi bi-tree"></i>
+        <h5>Mantenimiento periódico</h5>
+        <p>Cuidado continuo para mantener tu jardín impecable.</p>
+      </div>
+      <div class="col-md-3 icon-box">
+        <i class="bi bi-scissors"></i>
+        <h5>Podas y restauración</h5>
+        <p>Recuperación y embellecimiento profesional.</p>
+      </div>
+      <div class="col-md-3 icon-box">
+        <i class="bi bi-droplet-half"></i>
+        <h5>Sistemas de riego</h5>
+        <p>Instalación eficiente y automatizada.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section id="proceso" class="bg-light section-padding text-center">
+  <div class="container">
+    <h2 class="mb-5 fw-bold">Nuestro Proceso</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <h5>1. Evaluación</h5>
+        <p>Analizamos el espacio y sus necesidades.</p>
+      </div>
+      <div class="col-md-4">
+        <h5>2. Planificación</h5>
+        <p>Diseñamos una propuesta personalizada.</p>
+      </div>
+      <div class="col-md-4">
+        <h5>3. Ejecución</h5>
+        <p>Implementamos con precisión y calidad.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAQUINARIA -->
+<section id="maquinaria" class="section-padding text-center">
+  <div class="container">
+    <h2 class="mb-5 fw-bold">Maquinaria Profesional</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <h5>Cortacésped Profesional</h5>
+        <p>Precisión en cortes uniformes y estéticos.</p>
+      </div>
+      <div class="col-md-4">
+        <h5>Desmalezadoras</h5>
+        <p>Eliminación eficiente de maleza y bordes.</p>
+      </div>
+      <div class="col-md-4">
+        <h5>Tractores Cortacésped</h5>
+        <p>Ideal para grandes superficies verdes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERÍA -->
+<section class="bg-light section-padding text-center">
+  <div class="container">
+    <h2 class="mb-5 fw-bold">Proyectos Destacados</h2>
+    <div class="row gallery g-4">
+      <div class="col-md-4"><img src="https://images.unsplash.com/photo-1592595896551-12b371d546d5" class="img-fluid"></div>
+      <div class="col-md-4"><img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6" class="img-fluid"></div>
+      <div class="col-md-4"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" class="img-fluid"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CASOS DE ÉXITO -->
+<section id="casos" class="section-padding text-center">
+  <div class="container">
+    <h2 class="mb-5 fw-bold">Casos de Éxito</h2>
+    <p>Más de 150 proyectos transformados con excelencia y dedicación.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="bg-light section-padding">
+  <div class="container">
+    <h2 class="text-center mb-5 fw-bold">Preguntas Frecuentes</h2>
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+            ¿Ofrecen mantenimiento mensual?
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show">
+          <div class="accordion-body">
+            Sí, contamos con planes personalizados según el tamaño del espacio.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+            ¿Trabajan con empresas?
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            Sí, atendemos hogares, empresas y espacios comerciales.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="section-padding text-center">
+  <div class="container">
+    <h2 class="mb-4 fw-bold">Tu espacio verde, en manos expertas.</h2>
+    <form class="row g-3 justify-content-center">
+      <div class="col-md-4">
+        <input type="text" class="form-control" placeholder="Nombre" required>
+      </div>
+      <div class="col-md-4">
+        <input type="tel" class="form-control" placeholder="Teléfono" required>
+      </div>
+      <div class="col-md-8">
+        <textarea class="form-control" rows="3" placeholder="Servicio solicitado"></textarea>
+      </div>
+      <div class="col-12">
+        <a href="https://wa.me/59892214516" class="btn btn-success btn-lg">
+          Contactar por WhatsApp 092-214-516
+        </a>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="text-center">
+  <div class="container">
+    <p class="mb-0">© 2025 Noble Garden - Jardinería Profesional</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
