@@ -1,0 +1,265 @@
+import { motion } from "framer-motion";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { ArrowRight, Star, Droplets, Sparkles, ShieldCheck, Car } from "lucide-react";
+
+export default function NobleDetailingWebsite() {
+  const [form, setForm] = useState({
+    nombre: "",
+    vehiculo: "",
+    servicio: "",
+    fecha: "",
+  });
+
+  const [openFAQ, setOpenFAQ] = useState(null);
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const message = `Reserva Noble Detailing:%0A
+Nombre: ${form.nombre}%0A
+Vehículo: ${form.vehiculo}%0A
+Servicio: ${form.servicio}%0A
+Fecha: ${form.fecha}`;
+    window.open(`https://wa.me/59892214516?text=${message}`, "_blank");
+  };
+
+  const faqs = [
+    {
+      q: "¿Cuánto tiempo demora el servicio?",
+      a: "Depende del tratamiento. Un lavado premium puede tomar 2 a 3 horas, mientras que un tratamiento cerámico puede requerir un día completo para garantizar perfección absoluta.",
+    },
+    {
+      q: "¿Qué productos utilizan?",
+      a: "Trabajamos exclusivamente con productos profesionales de alta gama reconocidos en la industria del detailing internacional.",
+    },
+    {
+      q: "¿Ofrecen garantía en tratamientos cerámicos?",
+      a: "Sí. Nuestros tratamientos incluyen garantía según el tipo de protección aplicada y el mantenimiento posterior.",
+    },
+    {
+      q: "¿Es necesario agendar con anticipación?",
+      a: "Sí. Operamos únicamente con agenda previa para asegurar un estándar premium y dedicación exclusiva a cada vehículo.",
+    },
+  ];
+
+  return (
+    <div className="bg-[#0b0b0b] text-white font-sans">
+      {/* NAVBAR */}
+      <header className="fixed w-full z-50 bg-black/80 backdrop-blur border-b border-neutral-800">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+          <h1 className="text-xl font-semibold tracking-widest text-[#c6a85b]">
+            NOBLE DETAILING
+          </h1>
+          <Button
+            onClick={() => window.open("https://wa.me/59892214516", "_blank")}
+            className="bg-[#c6a85b] text-black rounded-2xl px-6"
+          >
+            Reservar
+          </Button>
+        </div>
+      </header>
+
+      {/* HERO */}
+      <section className="pt-40 pb-32 px-6 text-center bg-gradient-to-b from-black to-[#111]">
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-5xl md:text-7xl font-bold max-w-5xl mx-auto leading-tight"
+        >
+          La excelencia está en los detalles.
+        </motion.h2>
+        <p className="mt-8 text-lg text-neutral-400 max-w-2xl mx-auto">
+          Servicio premium de detailing automotriz enfocado en precisión,
+          perfección y estética absoluta.
+        </p>
+        <div className="mt-12">
+          <Button
+            onClick={() =>
+              document
+                .getElementById("reserva")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
+            className="bg-[#c6a85b] text-black px-10 py-6 rounded-2xl text-lg"
+          >
+            Reservar turno <ArrowRight className="ml-2 w-5 h-5" />
+          </Button>
+        </div>
+      </section>
+
+      {/* SERVICIOS */}
+      <section className="py-28 px-6 max-w-7xl mx-auto">
+        <h3 className="text-4xl font-semibold text-center mb-20">
+          Servicios Premium
+        </h3>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+          {[
+            { title: "Lavado Premium", icon: <Droplets /> },
+            { title: "Pulido & Abrillantado", icon: <Sparkles /> },
+            { title: "Tratamientos Cerámicos", icon: <ShieldCheck /> },
+            { title: "Restauración Interior", icon: <Car /> },
+          ].map((service, index) => (
+            <Card
+              key={index}
+              className="bg-[#141414] border border-neutral-800 rounded-2xl hover:scale-105 transition-transform"
+            >
+              <CardContent className="p-10 text-center flex flex-col items-center">
+                <div className="text-[#c6a85b] mb-6">
+                  {service.icon}
+                </div>
+                <h4 className="text-xl font-medium text-[#c6a85b]">
+                  {service.title}
+                </h4>
+                <p className="text-neutral-400 text-sm mt-4">
+                  Aplicamos técnicas profesionales y productos de alta gama
+                  garantizando resultados superiores.
+                </p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* CASOS DE ÉXITO */}
+      <section className="bg-[#111] py-28 px-6">
+        <div className="max-w-6xl mx-auto text-center">
+          <h3 className="text-4xl font-semibold mb-20">Casos de Éxito</h3>
+          <div className="grid md:grid-cols-3 gap-10">
+            {["BMW Serie 3", "Audi A5", "Porsche Cayenne"].map((car, index) => (
+              <Card
+                key={index}
+                className="bg-[#141414] border border-neutral-800 rounded-2xl"
+              >
+                <CardContent className="p-10">
+                  <h4 className="text-xl text-[#c6a85b] font-medium mb-4">
+                    {car}
+                  </h4>
+                  <p className="text-neutral-400 text-sm">
+                    Restauración completa con corrección de pintura y
+                    tratamiento cerámico, logrando acabado espejo y protección
+                    prolongada.
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* TESTIMONIOS */}
+      <section className="py-28 px-6 max-w-6xl mx-auto text-center">
+        <h3 className="text-4xl font-semibold mb-20">Clientes</h3>
+        <div className="grid md:grid-cols-3 gap-10">
+          {[1, 2, 3].map((item) => (
+            <Card
+              key={item}
+              className="bg-[#141414] border border-neutral-800 rounded-2xl"
+            >
+              <CardContent className="p-10">
+                <div className="flex justify-center mb-4 text-[#c6a85b]">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4" />
+                  ))}
+                </div>
+                <p className="text-neutral-400 text-sm">
+                  Atención impecable y resultados superiores. Un estándar
+                  realmente premium.
+                </p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="bg-[#111] py-28 px-6">
+        <div className="max-w-4xl mx-auto">
+          <h3 className="text-4xl font-semibold text-center mb-16">
+            Preguntas Frecuentes
+          </h3>
+          <div className="space-y-6">
+            {faqs.map((item, index) => (
+              <div
+                key={index}
+                className="border border-neutral-800 rounded-2xl p-6 cursor-pointer"
+                onClick={() => setOpenFAQ(openFAQ === index ? null : index)}
+              >
+                <h4 className="text-[#c6a85b] font-medium">
+                  {item.q}
+                </h4>
+                {openFAQ === index && (
+                  <p className="text-neutral-400 text-sm mt-4">
+                    {item.a}
+                  </p>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FORMULARIO */}
+      <section id="reserva" className="py-28 px-6">
+        <div className="max-w-3xl mx-auto">
+          <h3 className="text-4xl font-semibold text-center mb-16">
+            Reservar Turno
+          </h3>
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <input
+              type="text"
+              name="nombre"
+              placeholder="Nombre completo"
+              required
+              onChange={handleChange}
+              className="w-full p-5 rounded-2xl bg-[#1a1a1a] border border-neutral-800"
+            />
+            <input
+              type="text"
+              name="vehiculo"
+              placeholder="Marca y modelo"
+              required
+              onChange={handleChange}
+              className="w-full p-5 rounded-2xl bg-[#1a1a1a] border border-neutral-800"
+            />
+            <select
+              name="servicio"
+              required
+              onChange={handleChange}
+              className="w-full p-5 rounded-2xl bg-[#1a1a1a] border border-neutral-800"
+            >
+              <option value="">Seleccionar servicio</option>
+              <option>Lavado Premium</option>
+              <option>Pulido & Abrillantado</option>
+              <option>Tratamiento Cerámico</option>
+              <option>Restauración Interior</option>
+            </select>
+            <input
+              type="date"
+              name="fecha"
+              required
+              onChange={handleChange}
+              className="w-full p-5 rounded-2xl bg-[#1a1a1a] border border-neutral-800"
+            />
+            <Button
+              type="submit"
+              className="w-full bg-[#c6a85b] text-black py-6 rounded-2xl text-lg"
+            >
+              Confirmar por WhatsApp
+            </Button>
+          </form>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="py-12 border-t border-neutral-800 text-center text-neutral-500 text-sm">
+        © {new Date().getFullYear()} Noble Detailing · Servicio Premium de
+        Detailing Automotriz
+      </footer>
+    </div>
+  );
+}
