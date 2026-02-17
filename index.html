@@ -1,165 +1,199 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Noble Group</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-  <style>
-    body { font-family: 'Segoe UI', sans-serif; }
-    .hero { background: #000; color: white; padding: 120px 0; }
-    .btn-gold { background-color: #0d1b2a; color: white; border: none; }
-    .btn-gold:hover { background-color: #1b263b; }
-    .section-padding { padding: 100px 0; }
-    .icon-box i { font-size: 40px; margin-bottom: 20px; color: #0d1b2a; }
-    .testimonial { background: #f8f9fa; border-radius: 15px; padding: 30px; }
-    footer { background: #000; color: #aaa; padding: 30px 0; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Noble Group | Holding Empresarial</title>
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+body { font-family: 'Segoe UI', sans-serif; }
+.navbar { backdrop-filter: blur(10px); }
+.hero { background: linear-gradient(135deg,#000,#0d1b2a); color:white; padding:140px 0; }
+.section-padding { padding:100px 0; }
+.btn-gold { background:#0d1b2a; color:white; border:none; }
+.btn-gold:hover { background:#1b263b; }
+.unit-card { transition: all .3s ease; border-radius:15px; }
+.unit-card:hover { transform: translateY(-8px); box-shadow:0 15px 40px rgba(0,0,0,.15); }
+.icon-large { font-size:45px; color:#0d1b2a; }
+.testimonial { background:#f8f9fa; border-radius:15px; padding:30px; }
+footer { background:#000; color:#aaa; }
+</style>
 </head>
 <body>
 
-<!-- Navbar -->
+<!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="#">Noble Group</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#about">Sobre</a></li>
-        <li class="nav-item"><a class="nav-link" href="#units">Unidades</a></li>
-        <li class="nav-item"><a class="nav-link" href="#vision">Visión</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
-      </ul>
-    </div>
-  </div>
+<div class="container">
+<a class="navbar-brand fw-bold" href="#">Noble Group</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="nav">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link" href="#about">Sobre</a></li>
+<li class="nav-item"><a class="nav-link" href="#units">Unidades</a></li>
+<li class="nav-item"><a class="nav-link" href="#vision">Visión</a></li>
+<li class="nav-item"><a class="nav-link" href="#testimonials">Testimonios</a></li>
+<li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
+</ul>
+</div>
+</div>
 </nav>
 
-<!-- Hero -->
+<!-- HERO -->
 <section class="hero text-center">
-  <div class="container">
-    <h1 class="display-4 fw-bold">Construimos experiencias. Creamos soluciones.</h1>
-    <p class="lead mt-4">Un grupo empresarial que integra servicios premium en distintas áreas.</p>
-    <div class="mt-4">
-      <a href="#units" class="btn btn-light btn-lg me-3">Conocé nuestras marcas</a>
-      <a href="#contact" class="btn btn-outline-light btn-lg">Trabajemos juntos</a>
-    </div>
-  </div>
+<div class="container">
+<h1 class="display-4 fw-bold">Construimos experiencias. Creamos soluciones.</h1>
+<p class="lead mt-4">Grupo empresarial que integra servicios premium y soluciones estratégicas.</p>
+<div class="mt-4">
+<a href="#units" class="btn btn-light btn-lg me-3">Conocé nuestras marcas</a>
+<a href="#contact" class="btn btn-outline-light btn-lg">Trabajemos juntos</a>
+</div>
+</div>
 </section>
 
-<!-- Sobre -->
+<!-- SOBRE -->
 <section id="about" class="section-padding text-center">
-  <div class="container">
-    <h2 class="fw-bold mb-4">Sobre Noble Group</h2>
-    <p class="text-muted">Somos un ecosistema empresarial que integra múltiples unidades estratégicas bajo una misma visión de excelencia, liderazgo y expansión constante. Operamos con estructura profesional y mentalidad de crecimiento sostenible.</p>
-  </div>
+<div class="container">
+<h2 class="fw-bold mb-4">Sobre Noble Group</h2>
+<p class="text-muted">Noble Group es un holding empresarial que integra unidades estratégicas bajo una visión de excelencia, estructura y expansión constante. Operamos con procesos claros, liderazgo profesional y enfoque en crecimiento sostenible.</p>
+</div>
 </section>
 
-<!-- Unidades -->
+<!-- UNIDADES -->
 <section id="units" class="section-padding bg-light">
-  <div class="container">
-    <h2 class="text-center fw-bold mb-5">Nuestras Unidades de Negocio</h2>
-    <div class="row g-4 text-center">
-      <div class="col-md-3">
-        <div class="icon-box">
-          <i class="fas fa-car"></i>
-          <h5>Noble Detailing</h5>
-          <p class="text-muted">Servicio premium de detailing automotriz con precisión y excelencia.</p>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="icon-box">
-          <i class="fas fa-code"></i>
-          <h5>Noble Digital</h5>
-          <p class="text-muted">Desarrollo web, automatización y soluciones digitales estratégicas.</p>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="icon-box">
-          <i class="fas fa-music"></i>
-          <h5>Noble Sound</h5>
-          <p class="text-muted">DJ profesional y producción musical para eventos premium.</p>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="icon-box">
-          <i class="fas fa-leaf"></i>
-          <h5>Noble Garden</h5>
-          <p class="text-muted">Jardinería profesional y mantenimiento de espacios verdes.</p>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="container">
+<h2 class="text-center fw-bold mb-5">Nuestras Unidades</h2>
+<div class="row g-4">
+
+<div class="col-md-6 col-lg-3">
+<div class="card unit-card text-center p-4">
+<i class="bi bi-car-front icon-large"></i>
+<h5 class="mt-3">Noble Detailing</h5>
+<p class="text-muted">Detailing automotriz premium con precisión y excelencia.</p>
+<button class="btn btn-gold" data-bs-toggle="modal" data-bs-target="#reservaModal">Reservar</button>
+</div>
+</div>
+
+<div class="col-md-6 col-lg-3">
+<div class="card unit-card text-center p-4">
+<i class="bi bi-code-slash icon-large"></i>
+<h5 class="mt-3">Noble Digital</h5>
+<p class="text-muted">Desarrollo web, automatización y soluciones digitales.</p>
+<button class="btn btn-gold" data-bs-toggle="modal" data-bs-target="#reservaModal">Agendar</button>
+</div>
+</div>
+
+<div class="col-md-6 col-lg-3">
+<div class="card unit-card text-center p-4">
+<i class="bi bi-music-note-beamed icon-large"></i>
+<h5 class="mt-3">Noble Sound</h5>
+<p class="text-muted">DJ profesional y producción musical premium.</p>
+<button class="btn btn-gold" data-bs-toggle="modal" data-bs-target="#reservaModal">Reservar Fecha</button>
+</div>
+</div>
+
+<div class="col-md-6 col-lg-3">
+<div class="card unit-card text-center p-4">
+<i class="bi bi-tree icon-large"></i>
+<h5 class="mt-3">Noble Garden</h5>
+<p class="text-muted">Jardinería profesional y mantenimiento integral.</p>
+<button class="btn btn-gold" data-bs-toggle="modal" data-bs-target="#reservaModal">Solicitar</button>
+</div>
+</div>
+
+</div>
+</div>
 </section>
 
-<!-- Visión -->
+<!-- VISIÓN -->
 <section id="vision" class="section-padding text-center">
-  <div class="container">
-    <h2 class="fw-bold mb-4">Nuestra Visión</h2>
-    <p class="text-muted">Ser un grupo empresarial referente en calidad, innovación y expansión estratégica, creando marcas sólidas con procesos claros y enfoque en resultados.</p>
-  </div>
+<div class="container">
+<h2 class="fw-bold mb-4">Nuestra Visión</h2>
+<p class="text-muted">Ser un grupo empresarial referente en calidad, innovación y expansión estratégica, desarrollando marcas sólidas con procesos estructurados y mentalidad de liderazgo.</p>
+</div>
 </section>
 
-<!-- Testimonios -->
-<section class="section-padding bg-light">
-  <div class="container">
-    <h2 class="text-center fw-bold mb-5">Testimonios</h2>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="testimonial">
-          <p>"Profesionalismo absoluto. Noble Group elevó nuestro estándar empresarial."</p>
-          <strong>- Cliente Corporativo</strong>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="testimonial">
-          <p>"Estructura clara, procesos eficientes y resultados concretos."</p>
-          <strong>- Empresa Asociada</strong>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="testimonial">
-          <p>"Innovación y visión estratégica en cada unidad de negocio."</p>
-          <strong>- Partner Estratégico</strong>
-        </div>
-      </div>
-    </div>
-  </div>
+<!-- TESTIMONIOS -->
+<section id="testimonials" class="section-padding bg-light">
+<div class="container">
+<h2 class="text-center fw-bold mb-5">Testimonios</h2>
+<div class="row g-4">
+<div class="col-md-4"><div class="testimonial">"Profesionalismo y estructura impecable."<br><strong>- Cliente Corporativo</strong></div></div>
+<div class="col-md-4"><div class="testimonial">"Elevan el estándar en cada servicio."<br><strong>- Empresa Asociada</strong></div></div>
+<div class="col-md-4"><div class="testimonial">"Innovación constante y visión estratégica."<br><strong>- Partner</strong></div></div>
+</div>
+</div>
 </section>
 
-<!-- Contacto con WhatsApp -->
+<!-- CONTACTO -->
 <section id="contact" class="section-padding text-center">
-  <div class="container">
-    <h2 class="fw-bold mb-4">Construyamos algo grande juntos.</h2>
-    <form onsubmit="sendToWhatsApp(); return false;" class="row g-3 justify-content-center">
-      <div class="col-md-4">
-        <input type="text" id="name" class="form-control" placeholder="Tu nombre" required>
-      </div>
-      <div class="col-md-4">
-        <input type="text" id="message" class="form-control" placeholder="Tu mensaje" required>
-      </div>
-      <div class="col-12">
-        <button type="submit" class="btn btn-gold btn-lg">Enviar por WhatsApp</button>
-      </div>
-    </form>
-  </div>
+<div class="container">
+<h2 class="fw-bold mb-4">Construyamos algo grande juntos</h2>
+<form onsubmit="sendToWhatsApp(); return false;" class="row g-3 justify-content-center">
+<div class="col-md-4"><input type="text" id="name" class="form-control" placeholder="Nombre" required></div>
+<div class="col-md-4"><input type="email" id="email" class="form-control" placeholder="Email" required></div>
+<div class="col-md-8"><textarea id="message" class="form-control" rows="3" placeholder="Mensaje" required></textarea></div>
+<div class="col-12"><button type="submit" class="btn btn-gold btn-lg">Enviar por WhatsApp</button></div>
+</form>
+</div>
 </section>
 
-<footer class="text-center">
-  <div class="container">
-    <p>© 2026 Noble Group. Todos los derechos reservados.</p>
-  </div>
+<!-- MODAL RESERVA -->
+<div class="modal fade" id="reservaModal" tabindex="-1">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title">Formulario de Reserva</h5>
+<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body">
+<form onsubmit="sendReservation(); return false;">
+<div class="mb-3"><input type="text" id="rname" class="form-control" placeholder="Nombre" required></div>
+<div class="mb-3"><input type="date" id="rdate" class="form-control" required></div>
+<div class="mb-3"><textarea id="rservice" class="form-control" placeholder="Servicio solicitado" required></textarea></div>
+<button type="submit" class="btn btn-gold w-100">Confirmar por WhatsApp</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+
+<!-- FOOTER -->
+<footer class="text-center py-4">
+<div class="container">
+<div class="mb-3">
+<a href="#" class="text-decoration-none text-light me-3"><i class="bi bi-instagram fs-4"></i></a>
+<a href="#" class="text-decoration-none text-light me-3"><i class="bi bi-facebook fs-4"></i></a>
+<a href="#" class="text-decoration-none text-light me-3"><i class="bi bi-linkedin fs-4"></i></a>
+<a href="#" class="text-decoration-none text-light me-3"><i class="bi bi-youtube fs-4"></i></a>
+<a href="#" class="text-decoration-none text-light"><i class="bi bi-whatsapp fs-4"></i></a>
+</div>
+<div>© 2026 Noble Group - Todos los derechos reservados</div>
+</div>
 </footer>
 
 <script>
-function sendToWhatsApp() {
-  var name = document.getElementById('name').value;
-  var message = document.getElementById('message').value;
-  var phone = '59892214516';
-  var url = `https://wa.me/${phone}?text=Hola,%20soy%20${name}.%20${message}`;
-  window.open(url, '_blank');
+function sendToWhatsApp(){
+let name=document.getElementById('name').value;
+let email=document.getElementById('email').value;
+let message=document.getElementById('message').value;
+let phone='59892214516';
+let url=`https://wa.me/${phone}?text=Hola,%20soy%20${name}%20(${email}).%20${message}`;
+window.open(url,'_blank');
+}
+
+function sendReservation(){
+let name=document.getElementById('rname').value;
+let date=document.getElementById('rdate').value;
+let service=document.getElementById('rservice').value;
+let phone='59892214516';
+let url=`https://wa.me/${phone}?text=Reserva%20de%20${service}%20para%20${date}.%20Nombre:%20${name}`;
+window.open(url,'_blank');
 }
 </script>
 
