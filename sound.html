@@ -1,193 +1,334 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import {
-  Music,
-  Speaker,
-  PartyPopper,
-  Building2,
-  Phone,
-  Calendar,
-  User,
-  MessageCircle,
-  Instagram,
-  Mail,
-  ChevronDown,
-  Zap,
-  Volume2,
-  Lightbulb,
-  Cloud
-} from "lucide-react";
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Noble Sound | Producción de Eventos Premium</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
 
-export default function NobleSoundWebsite() {
-  const [form, setForm] = useState({
-    nombre: "",
-    fecha: "",
-    evento: "",
-    mensaje: "",
-  });
-
-  const [openFAQ, setOpenFAQ] = useState(null);
-
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const texto = `Hola Noble Sound!%0A%0A👤 Nombre: ${form.nombre}%0A📅 Fecha: ${form.fecha}%0A🎉 Evento: ${form.evento}%0A📝 Detalles: ${form.mensaje}`;
-    window.open(`https://wa.me/59892214516?text=${texto}`, "_blank");
-  };
-
-  const faqData = [
-    {
-      question: "¿Con cuánta anticipación debo reservar?",
-      answer: "Recomendamos reservar con al menos 30 días de anticipación para asegurar disponibilidad."
-    },
-    {
-      question: "¿Incluye sonido e iluminación?",
-      answer: "Sí. Ofrecemos producción integral con audio profesional e iluminación inteligente."
-    },
-    {
-      question: "¿Se puede personalizar la música?",
-      answer: "Totalmente. Adaptamos cada evento al estilo y energía del cliente."
-    }
-  ];
-
-  return (
-    <div className="bg-black text-white font-sans scroll-smooth">
-      {/* HERO */}
-      <section className="relative min-h-screen flex items-center justify-center text-center px-6 pt-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/40 via-black to-blue-900/40 blur-3xl opacity-60" />
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="z-10 max-w-3xl"
-        >
-          <h1 className="text-5xl md:text-6xl font-bold leading-tight">
-            Creamos la atmósfera perfecta.
-          </h1>
-          <p className="mt-6 text-xl text-gray-300">
-            DJ & Producción Musical Premium para eventos corporativos y sociales.
-          </p>
-          <div className="mt-10">
-            <Button
-              onClick={() => window.open("https://wa.me/59892214516", "_blank")}
-              className="bg-purple-600 hover:bg-purple-700 px-8 py-6 rounded-2xl text-lg"
-            >
-              <Calendar className="mr-2" size={18} /> Reservar fecha
-            </Button>
-          </div>
-        </motion.div>
-      </section>
-
-      {/* GALERÍA DE FOTOS */}
-      <section className="py-28 px-6 max-w-7xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-16">Galería de Eventos</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {[1,2,3,4,5,6,7,8,9].map((img) => (
-            <div key={img} className="overflow-hidden rounded-3xl group">
-              <div className="bg-zinc-800 h-72 w-full group-hover:scale-110 transition-transform duration-500" />
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* TECNOLOGÍA */}
-      <section className="py-28 px-6 bg-zinc-950">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16">Tecnología & Producción</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
-            {[
-              {
-                icon: <Volume2 size={32} />,
-                title: "Audio Profesional",
-                desc: "Sistemas line array, subwoofers de alta potencia y procesamiento digital para sonido nítido y envolvente."
-              },
-              {
-                icon: <Lightbulb size={32} />,
-                title: "Iluminación Inteligente",
-                desc: "Cabezas móviles, wash LED, efectos rítmicos y sincronización DMX adaptada al evento."
-              },
-              {
-                icon: <Cloud size={32} />,
-                title: "Máquinas de Humo",
-                desc: "Efectos de humo y niebla profesional para potenciar la experiencia visual y escénica."
-              },
-              {
-                icon: <Zap size={32} />,
-                title: "Producción Integral",
-                desc: "Montaje técnico, operación en vivo y coordinación completa para eventos de alto nivel."
-              }
-            ].map((item, i) => (
-              <Card key={i} className="bg-zinc-900 border border-zinc-800 rounded-3xl">
-                <CardContent className="p-8 text-center space-y-4">
-                  <div className="text-purple-500 flex justify-center">{item.icon}</div>
-                  <h3 className="text-xl font-semibold">{item.title}</h3>
-                  <p className="text-gray-400 text-sm">{item.desc}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="py-28 px-6 max-w-4xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-16">Preguntas Frecuentes</h2>
-        <div className="space-y-6">
-          {faqData.map((faq, index) => (
-            <div key={index} className="border border-zinc-800 rounded-2xl">
-              <button
-                onClick={() => setOpenFAQ(openFAQ === index ? null : index)}
-                className="w-full flex justify-between items-center p-6 text-left"
-              >
-                <span className="font-semibold">{faq.question}</span>
-                <ChevronDown className={`transition-transform ${openFAQ === index ? "rotate-180" : ""}`} />
-              </button>
-              {openFAQ === index && (
-                <div className="px-6 pb-6 text-gray-400 text-sm">
-                  {faq.answer}
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* CONTACTO */}
-      <section className="py-28 px-6 bg-zinc-950">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16">Reserva tu Fecha</h2>
-          <Card className="bg-zinc-900 border border-zinc-800 rounded-3xl">
-            <CardContent className="p-10">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <Input name="nombre" placeholder="Tu nombre" value={form.nombre} onChange={handleChange} required className="bg-zinc-800 border-zinc-700" />
-                <Input type="date" name="fecha" value={form.fecha} onChange={handleChange} required className="bg-zinc-800 border-zinc-700" />
-                <Input name="evento" placeholder="Tipo de evento" value={form.evento} onChange={handleChange} required className="bg-zinc-800 border-zinc-700" />
-                <Textarea name="mensaje" placeholder="Detalles adicionales" value={form.mensaje} onChange={handleChange} className="bg-zinc-800 border-zinc-700" />
-                <Button type="submit" className="w-full py-6 text-lg rounded-2xl bg-green-600 hover:bg-green-700">
-                  <Phone className="mr-2" size={18} /> Enviar por WhatsApp (092-214-516)
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* FOOTER */}
-      <footer className="border-t border-zinc-800 py-10 text-center text-gray-500 text-sm">
-        <div className="flex justify-center gap-6 mb-4">
-          <Instagram size={18} />
-          <Mail size={18} />
-          <Phone size={18} />
-        </div>
-        © {new Date().getFullYear()} Noble Sound — Producción Musical Premium
-      </footer>
-    </div>
-  );
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
 }
+
+body{
+background:#0f0f0f;
+color:white;
+}
+
+header{
+position:fixed;
+width:100%;
+background:rgba(0,0,0,0.8);
+padding:20px 10%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:1000;
+backdrop-filter:blur(10px);
+}
+
+header h1{
+color:#ffae00;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+font-weight:500;
+transition:.3s;
+}
+
+nav a:hover{
+color:#ffae00;
+}
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
+url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30');
+background-size:cover;
+background-position:center;
+padding:0 10%;
+}
+
+.hero h2{
+font-size:3rem;
+font-weight:800;
+color:#ffae00;
+}
+
+.hero p{
+margin-top:20px;
+font-size:1.2rem;
+max-width:700px;
+}
+
+.btn{
+margin-top:30px;
+display:inline-block;
+padding:15px 40px;
+background:#ffae00;
+color:black;
+font-weight:600;
+text-decoration:none;
+border-radius:30px;
+transition:.3s;
+}
+
+.btn:hover{
+background:white;
+}
+
+section{
+padding:100px 10%;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:60px;
+}
+
+.section-title h2{
+font-size:2.5rem;
+color:#ffae00;
+}
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.card{
+background:#1a1a1a;
+padding:30px;
+border-radius:15px;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+background:#222;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+border-radius:10px;
+transition:.3s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+.tech{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.tech-box{
+background:#1a1a1a;
+padding:30px;
+border-radius:15px;
+}
+
+.success{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+.success-box{
+background:#1a1a1a;
+padding:30px;
+border-radius:15px;
+}
+
+.faq{
+max-width:800px;
+margin:auto;
+}
+
+.faq-item{
+margin-bottom:20px;
+}
+
+.faq-item h4{
+color:#ffae00;
+margin-bottom:10px;
+}
+
+.contact{
+text-align:center;
+}
+
+footer{
+background:#000;
+text-align:center;
+padding:30px;
+margin-top:50px;
+}
+
+@media(max-width:768px){
+.hero h2{
+font-size:2rem;
+}
+}
+
+</style>
+</head>
+<body>
+
+<header>
+<h1>Noble Sound</h1>
+<nav>
+<a href="#servicios">Servicios</a>
+<a href="#galeria">Galería</a>
+<a href="#tecnologia">Tecnología</a>
+<a href="#casos">Casos de Éxito</a>
+<a href="#faq">FAQ</a>
+<a href="#contacto">Contacto</a>
+</nav>
+</header>
+
+<section class="hero">
+<h2>Ambiente & Música de Alto Nivel</h2>
+<p>Producción profesional para eventos corporativos, bodas y fiestas privadas. Creamos experiencias inolvidables.</p>
+<a href="#contacto" class="btn">Reservar Fecha</a>
+</section>
+
+<section id="servicios">
+<div class="section-title">
+<h2>Servicios</h2>
+</div>
+<div class="services">
+<div class="card">
+<h3>Eventos Corporativos</h3>
+<p>Sonido e iluminación profesional para lanzamientos, conferencias y celebraciones empresariales.</p>
+</div>
+<div class="card">
+<h3>Bodas & Fiestas</h3>
+<p>Ambientación personalizada y musicalización adaptada a cada momento especial.</p>
+</div>
+<div class="card">
+<h3>Producción Musical</h3>
+<p>DJ profesional con experiencia creando sets dinámicos y energéticos.</p>
+</div>
+<div class="card">
+<h3>Sonido & Iluminación</h3>
+<p>Equipamiento premium de alta fidelidad y efectos visuales impactantes.</p>
+</div>
+</div>
+</section>
+
+<section id="galeria">
+<div class="section-title">
+<h2>Galería</h2>
+</div>
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2">
+<img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819">
+<img src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc">
+<img src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec">
+<img src="https://images.unsplash.com/photo-1506157786151-b8491531f063">
+<img src="https://images.unsplash.com/photo-1496337589254-7e19d01cec44">
+</div>
+</section>
+
+<section id="tecnologia">
+<div class="section-title">
+<h2>Tecnología</h2>
+</div>
+<div class="tech">
+<div class="tech-box">
+<h3>Audio Profesional</h3>
+<p>Sistemas line array y monitores de alta potencia para sonido limpio y envolvente.</p>
+</div>
+<div class="tech-box">
+<h3>Iluminación Inteligente</h3>
+<p>Luces robotizadas, wash, beam y efectos dinámicos sincronizados con la música.</p>
+</div>
+<div class="tech-box">
+<h3>Máquinas de Humo</h3>
+<p>Efectos atmosféricos que potencian la experiencia visual del evento.</p>
+</div>
+<div class="tech-box">
+<h3>Producción Integral</h3>
+<p>Planificación técnica completa para eventos de cualquier escala.</p>
+</div>
+</div>
+</section>
+
+<section id="casos">
+<div class="section-title">
+<h2>Casos de Éxito</h2>
+</div>
+<div class="success">
+<div class="success-box">
+<h3>Lanzamiento Corporativo</h3>
+<p>Producción completa para empresa multinacional con más de 500 asistentes.</p>
+</div>
+<div class="success-box">
+<h3>Boda Premium</h3>
+<p>Ambientación elegante con iluminación cálida y pista llena toda la noche.</p>
+</div>
+<div class="success-box">
+<h3>Fiesta Privada Exclusiva</h3>
+<p>Set personalizado y show de luces dinámico para experiencia VIP.</p>
+</div>
+</div>
+</section>
+
+<section id="faq">
+<div class="section-title">
+<h2>Preguntas Frecuentes</h2>
+</div>
+<div class="faq">
+<div class="faq-item">
+<h4>¿Con cuánta anticipación debo reservar?</h4>
+<p>Recomendamos al menos 1 mes de anticipación para asegurar disponibilidad.</p>
+</div>
+<div class="faq-item">
+<h4>¿Incluyen montaje y desmontaje?</h4>
+<p>Sí, nuestro equipo técnico se encarga de todo el proceso.</p>
+</div>
+<div class="faq-item">
+<h4>¿Trabajan fuera de la ciudad?</h4>
+<p>Sí, ofrecemos cobertura regional bajo coordinación previa.</p>
+</div>
+</div>
+</section>
+
+<section id="contacto" class="contact">
+<div class="section-title">
+<h2>Contacto</h2>
+</div>
+<p>Reserva tu fecha hoy mismo y llevemos tu evento al siguiente nivel.</p>
+<br>
+<a href="https://wa.me/092214516" class="btn">WhatsApp 092 214 516</a>
+</section>
+
+<footer>
+<p>© 2026 Noble Sound | Producción de Eventos Premium</p>
+</footer>
+
+</body>
+</html>
