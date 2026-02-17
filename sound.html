@@ -1,0 +1,193 @@
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Music,
+  Speaker,
+  PartyPopper,
+  Building2,
+  Phone,
+  Calendar,
+  User,
+  MessageCircle,
+  Instagram,
+  Mail,
+  ChevronDown,
+  Zap,
+  Volume2,
+  Lightbulb,
+  Cloud
+} from "lucide-react";
+
+export default function NobleSoundWebsite() {
+  const [form, setForm] = useState({
+    nombre: "",
+    fecha: "",
+    evento: "",
+    mensaje: "",
+  });
+
+  const [openFAQ, setOpenFAQ] = useState(null);
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const texto = `Hola Noble Sound!%0A%0A👤 Nombre: ${form.nombre}%0A📅 Fecha: ${form.fecha}%0A🎉 Evento: ${form.evento}%0A📝 Detalles: ${form.mensaje}`;
+    window.open(`https://wa.me/59892214516?text=${texto}`, "_blank");
+  };
+
+  const faqData = [
+    {
+      question: "¿Con cuánta anticipación debo reservar?",
+      answer: "Recomendamos reservar con al menos 30 días de anticipación para asegurar disponibilidad."
+    },
+    {
+      question: "¿Incluye sonido e iluminación?",
+      answer: "Sí. Ofrecemos producción integral con audio profesional e iluminación inteligente."
+    },
+    {
+      question: "¿Se puede personalizar la música?",
+      answer: "Totalmente. Adaptamos cada evento al estilo y energía del cliente."
+    }
+  ];
+
+  return (
+    <div className="bg-black text-white font-sans scroll-smooth">
+      {/* HERO */}
+      <section className="relative min-h-screen flex items-center justify-center text-center px-6 pt-32 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/40 via-black to-blue-900/40 blur-3xl opacity-60" />
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="z-10 max-w-3xl"
+        >
+          <h1 className="text-5xl md:text-6xl font-bold leading-tight">
+            Creamos la atmósfera perfecta.
+          </h1>
+          <p className="mt-6 text-xl text-gray-300">
+            DJ & Producción Musical Premium para eventos corporativos y sociales.
+          </p>
+          <div className="mt-10">
+            <Button
+              onClick={() => window.open("https://wa.me/59892214516", "_blank")}
+              className="bg-purple-600 hover:bg-purple-700 px-8 py-6 rounded-2xl text-lg"
+            >
+              <Calendar className="mr-2" size={18} /> Reservar fecha
+            </Button>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* GALERÍA DE FOTOS */}
+      <section className="py-28 px-6 max-w-7xl mx-auto">
+        <h2 className="text-4xl font-bold text-center mb-16">Galería de Eventos</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {[1,2,3,4,5,6,7,8,9].map((img) => (
+            <div key={img} className="overflow-hidden rounded-3xl group">
+              <div className="bg-zinc-800 h-72 w-full group-hover:scale-110 transition-transform duration-500" />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* TECNOLOGÍA */}
+      <section className="py-28 px-6 bg-zinc-950">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-16">Tecnología & Producción</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+            {[
+              {
+                icon: <Volume2 size={32} />,
+                title: "Audio Profesional",
+                desc: "Sistemas line array, subwoofers de alta potencia y procesamiento digital para sonido nítido y envolvente."
+              },
+              {
+                icon: <Lightbulb size={32} />,
+                title: "Iluminación Inteligente",
+                desc: "Cabezas móviles, wash LED, efectos rítmicos y sincronización DMX adaptada al evento."
+              },
+              {
+                icon: <Cloud size={32} />,
+                title: "Máquinas de Humo",
+                desc: "Efectos de humo y niebla profesional para potenciar la experiencia visual y escénica."
+              },
+              {
+                icon: <Zap size={32} />,
+                title: "Producción Integral",
+                desc: "Montaje técnico, operación en vivo y coordinación completa para eventos de alto nivel."
+              }
+            ].map((item, i) => (
+              <Card key={i} className="bg-zinc-900 border border-zinc-800 rounded-3xl">
+                <CardContent className="p-8 text-center space-y-4">
+                  <div className="text-purple-500 flex justify-center">{item.icon}</div>
+                  <h3 className="text-xl font-semibold">{item.title}</h3>
+                  <p className="text-gray-400 text-sm">{item.desc}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-28 px-6 max-w-4xl mx-auto">
+        <h2 className="text-4xl font-bold text-center mb-16">Preguntas Frecuentes</h2>
+        <div className="space-y-6">
+          {faqData.map((faq, index) => (
+            <div key={index} className="border border-zinc-800 rounded-2xl">
+              <button
+                onClick={() => setOpenFAQ(openFAQ === index ? null : index)}
+                className="w-full flex justify-between items-center p-6 text-left"
+              >
+                <span className="font-semibold">{faq.question}</span>
+                <ChevronDown className={`transition-transform ${openFAQ === index ? "rotate-180" : ""}`} />
+              </button>
+              {openFAQ === index && (
+                <div className="px-6 pb-6 text-gray-400 text-sm">
+                  {faq.answer}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CONTACTO */}
+      <section className="py-28 px-6 bg-zinc-950">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-16">Reserva tu Fecha</h2>
+          <Card className="bg-zinc-900 border border-zinc-800 rounded-3xl">
+            <CardContent className="p-10">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <Input name="nombre" placeholder="Tu nombre" value={form.nombre} onChange={handleChange} required className="bg-zinc-800 border-zinc-700" />
+                <Input type="date" name="fecha" value={form.fecha} onChange={handleChange} required className="bg-zinc-800 border-zinc-700" />
+                <Input name="evento" placeholder="Tipo de evento" value={form.evento} onChange={handleChange} required className="bg-zinc-800 border-zinc-700" />
+                <Textarea name="mensaje" placeholder="Detalles adicionales" value={form.mensaje} onChange={handleChange} className="bg-zinc-800 border-zinc-700" />
+                <Button type="submit" className="w-full py-6 text-lg rounded-2xl bg-green-600 hover:bg-green-700">
+                  <Phone className="mr-2" size={18} /> Enviar por WhatsApp (092-214-516)
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="border-t border-zinc-800 py-10 text-center text-gray-500 text-sm">
+        <div className="flex justify-center gap-6 mb-4">
+          <Instagram size={18} />
+          <Mail size={18} />
+          <Phone size={18} />
+        </div>
+        © {new Date().getFullYear()} Noble Sound — Producción Musical Premium
+      </footer>
+    </div>
+  );
+}
